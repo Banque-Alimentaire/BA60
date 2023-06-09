@@ -39,10 +39,10 @@
         <script src="data/ZRR2018_6.js"></script>
         <script src="data/Zonesblanchesdeloffreetdelaidealimentaires_7.js"></script>
         <script src="data/Zonesblanchesdeloffrealimentaireclassique_8.js"></script>
-        <script src="data/SuprettesetEpiceries_9.js"></script>
-        <script src="data/HypermarchsetSupermarchs_10.js"></script>
-        <script src="data/Commmunesavecaidealimentaires_11.js"></script>
-        <script src="data/Zonesblanchesdelaidealimentaire_12.js"></script>
+        <script src="data/Commmunesavecaidealimentaires_9.js"></script>
+        <script src="data/Zonesblanchesdelaidealimentaire_10.js"></script>
+        <script src="data/SuprettesetEpiceries_11.js"></script>
+        <script src="data/HypermarchsetSupermarchs_12.js"></script>
         <script src="data/SSVP_13.js"></script>
         <script src="data/SecoursCatholique_14.js"></script>
         <script src="data/SecoursPop_15.js"></script>
@@ -120,7 +120,6 @@
             style: style_EPCIOise_1_0,
         });
         bounds_group.addLayer(layer_EPCIOise_1);
-        map.addLayer(layer_EPCIOise_1);
         function pop_Communes_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -609,7 +608,85 @@
             style: style_Zonesblanchesdeloffrealimentaireclassique_8_0,
         });
         bounds_group.addLayer(layer_Zonesblanchesdeloffrealimentaireclassique_8);
-        function pop_SuprettesetEpiceries_9(feature, layer) {
+        function pop_Commmunesavecaidealimentaires_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Commune</th>\
+                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Commmunesavecaidealimentaires_9_0() {
+            return {
+                pane: 'pane_Commmunesavecaidealimentaires_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(246,234,6,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Commmunesavecaidealimentaires_9');
+        map.getPane('pane_Commmunesavecaidealimentaires_9').style.zIndex = 409;
+        map.getPane('pane_Commmunesavecaidealimentaires_9').style['mix-blend-mode'] = 'normal';
+        var layer_Commmunesavecaidealimentaires_9 = new L.geoJson(json_Commmunesavecaidealimentaires_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Commmunesavecaidealimentaires_9',
+            layerName: 'layer_Commmunesavecaidealimentaires_9',
+            pane: 'pane_Commmunesavecaidealimentaires_9',
+            onEachFeature: pop_Commmunesavecaidealimentaires_9,
+            style: style_Commmunesavecaidealimentaires_9_0,
+        });
+        bounds_group.addLayer(layer_Commmunesavecaidealimentaires_9);
+        map.addLayer(layer_Commmunesavecaidealimentaires_9);
+        function pop_Zonesblanchesdelaidealimentaire_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Commune</th>\
+                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Zonesblanchesdelaidealimentaire_10_0() {
+            return {
+                pane: 'pane_Zonesblanchesdelaidealimentaire_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,0.5568627450980392)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Zonesblanchesdelaidealimentaire_10');
+        map.getPane('pane_Zonesblanchesdelaidealimentaire_10').style.zIndex = 410;
+        map.getPane('pane_Zonesblanchesdelaidealimentaire_10').style['mix-blend-mode'] = 'normal';
+        var layer_Zonesblanchesdelaidealimentaire_10 = new L.geoJson(json_Zonesblanchesdelaidealimentaire_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Zonesblanchesdelaidealimentaire_10',
+            layerName: 'layer_Zonesblanchesdelaidealimentaire_10',
+            pane: 'pane_Zonesblanchesdelaidealimentaire_10',
+            onEachFeature: pop_Zonesblanchesdelaidealimentaire_10,
+            style: style_Zonesblanchesdelaidealimentaire_10_0,
+        });
+        bounds_group.addLayer(layer_Zonesblanchesdelaidealimentaire_10);
+        map.addLayer(layer_Zonesblanchesdelaidealimentaire_10);
+        function pop_SuprettesetEpiceries_11(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Type de commerce</th>\
@@ -623,9 +700,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_SuprettesetEpiceries_9_0() {
+        function style_SuprettesetEpiceries_11_0() {
             return {
-                pane: 'pane_SuprettesetEpiceries_9',
+                pane: 'pane_SuprettesetEpiceries_11',
                 shape: 'square',
                 radius: 3.2,
                 opacity: 1,
@@ -640,26 +717,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_SuprettesetEpiceries_9');
-        map.getPane('pane_SuprettesetEpiceries_9').style.zIndex = 409;
-        map.getPane('pane_SuprettesetEpiceries_9').style['mix-blend-mode'] = 'normal';
-        var layer_SuprettesetEpiceries_9 = new L.geoJson(json_SuprettesetEpiceries_9, {
+        map.createPane('pane_SuprettesetEpiceries_11');
+        map.getPane('pane_SuprettesetEpiceries_11').style.zIndex = 411;
+        map.getPane('pane_SuprettesetEpiceries_11').style['mix-blend-mode'] = 'normal';
+        var layer_SuprettesetEpiceries_11 = new L.geoJson(json_SuprettesetEpiceries_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_SuprettesetEpiceries_9',
-            layerName: 'layer_SuprettesetEpiceries_9',
-            pane: 'pane_SuprettesetEpiceries_9',
-            onEachFeature: pop_SuprettesetEpiceries_9,
+            dataVar: 'json_SuprettesetEpiceries_11',
+            layerName: 'layer_SuprettesetEpiceries_11',
+            pane: 'pane_SuprettesetEpiceries_11',
+            onEachFeature: pop_SuprettesetEpiceries_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_SuprettesetEpiceries_9_0(feature));
+                return L.shapeMarker(latlng, style_SuprettesetEpiceries_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_SuprettesetEpiceries_9);
-        function pop_HypermarchsetSupermarchs_10(feature, layer) {
+        bounds_group.addLayer(layer_SuprettesetEpiceries_11);
+        function pop_HypermarchsetSupermarchs_12(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Type de commerce</th>\
@@ -673,9 +750,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_HypermarchsetSupermarchs_10_0() {
+        function style_HypermarchsetSupermarchs_12_0() {
             return {
-                pane: 'pane_HypermarchsetSupermarchs_10',
+                pane: 'pane_HypermarchsetSupermarchs_12',
                 shape: 'square',
                 radius: 3.2,
                 opacity: 1,
@@ -690,103 +767,25 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_HypermarchsetSupermarchs_10');
-        map.getPane('pane_HypermarchsetSupermarchs_10').style.zIndex = 410;
-        map.getPane('pane_HypermarchsetSupermarchs_10').style['mix-blend-mode'] = 'normal';
-        var layer_HypermarchsetSupermarchs_10 = new L.geoJson(json_HypermarchsetSupermarchs_10, {
+        map.createPane('pane_HypermarchsetSupermarchs_12');
+        map.getPane('pane_HypermarchsetSupermarchs_12').style.zIndex = 412;
+        map.getPane('pane_HypermarchsetSupermarchs_12').style['mix-blend-mode'] = 'normal';
+        var layer_HypermarchsetSupermarchs_12 = new L.geoJson(json_HypermarchsetSupermarchs_12, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HypermarchsetSupermarchs_10',
-            layerName: 'layer_HypermarchsetSupermarchs_10',
-            pane: 'pane_HypermarchsetSupermarchs_10',
-            onEachFeature: pop_HypermarchsetSupermarchs_10,
+            dataVar: 'json_HypermarchsetSupermarchs_12',
+            layerName: 'layer_HypermarchsetSupermarchs_12',
+            pane: 'pane_HypermarchsetSupermarchs_12',
+            onEachFeature: pop_HypermarchsetSupermarchs_12,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_HypermarchsetSupermarchs_10_0(feature));
+                return L.shapeMarker(latlng, style_HypermarchsetSupermarchs_12_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HypermarchsetSupermarchs_10);
-        function pop_Commmunesavecaidealimentaires_11(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Commmunesavecaidealimentaires_11_0() {
-            return {
-                pane: 'pane_Commmunesavecaidealimentaires_11',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(246,234,6,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Commmunesavecaidealimentaires_11');
-        map.getPane('pane_Commmunesavecaidealimentaires_11').style.zIndex = 411;
-        map.getPane('pane_Commmunesavecaidealimentaires_11').style['mix-blend-mode'] = 'normal';
-        var layer_Commmunesavecaidealimentaires_11 = new L.geoJson(json_Commmunesavecaidealimentaires_11, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Commmunesavecaidealimentaires_11',
-            layerName: 'layer_Commmunesavecaidealimentaires_11',
-            pane: 'pane_Commmunesavecaidealimentaires_11',
-            onEachFeature: pop_Commmunesavecaidealimentaires_11,
-            style: style_Commmunesavecaidealimentaires_11_0,
-        });
-        bounds_group.addLayer(layer_Commmunesavecaidealimentaires_11);
-        map.addLayer(layer_Commmunesavecaidealimentaires_11);
-        function pop_Zonesblanchesdelaidealimentaire_12(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Zonesblanchesdelaidealimentaire_12_0() {
-            return {
-                pane: 'pane_Zonesblanchesdelaidealimentaire_12',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,0.5568627450980392)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Zonesblanchesdelaidealimentaire_12');
-        map.getPane('pane_Zonesblanchesdelaidealimentaire_12').style.zIndex = 412;
-        map.getPane('pane_Zonesblanchesdelaidealimentaire_12').style['mix-blend-mode'] = 'normal';
-        var layer_Zonesblanchesdelaidealimentaire_12 = new L.geoJson(json_Zonesblanchesdelaidealimentaire_12, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Zonesblanchesdelaidealimentaire_12',
-            layerName: 'layer_Zonesblanchesdelaidealimentaire_12',
-            pane: 'pane_Zonesblanchesdelaidealimentaire_12',
-            onEachFeature: pop_Zonesblanchesdelaidealimentaire_12,
-            style: style_Zonesblanchesdelaidealimentaire_12_0,
-        });
-        bounds_group.addLayer(layer_Zonesblanchesdelaidealimentaire_12);
-        map.addLayer(layer_Zonesblanchesdelaidealimentaire_12);
+        bounds_group.addLayer(layer_HypermarchsetSupermarchs_12);
         function pop_SSVP_13(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1620,7 +1619,7 @@
         bounds_group.addLayer(layer_RgionHautsdeFrance_26);
         map.addLayer(layer_RgionHautsdeFrance_26);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/RgionHautsdeFrance_26.png" /> Région Hauts de France': layer_RgionHautsdeFrance_26,'<img src="legend/DpartementOise_25.png" /> Département - Oise': layer_DpartementOise_25,'<img src="legend/BAdelOise_24.png" /> BA de l\'Oise': layer_BAdelOise_24,'<img src="legend/CCASpartenaires_23.png" /> CCAS partenaires': layer_CCASpartenaires_23,'<img src="legend/Epiceriessocialespartenaires_22.png" /> Epiceries sociales partenaires': layer_Epiceriessocialespartenaires_22,'<img src="legend/Associationspartenaires_21.png" /> Associations partenaires ': layer_Associationspartenaires_21,'<img src="legend/Autresassociationshabilites_20.png" /> Autres associations habilitées': layer_Autresassociationshabilites_20,'<img src="legend/Andesnonpartenaires_19.png" /> Andes (non partenaires)': layer_Andesnonpartenaires_19,'<img src="legend/CroixRouge_18.png" /> Croix Rouge': layer_CroixRouge_18,'<img src="legend/ArmeduSalut_17.png" /> Armée du Salut': layer_ArmeduSalut_17,'<img src="legend/RestoduCoeur_16.png" /> Resto du Coeur': layer_RestoduCoeur_16,'<img src="legend/SecoursPop_15.png" /> Secours Pop': layer_SecoursPop_15,'<img src="legend/SecoursCatholique_14.png" /> Secours Catholique': layer_SecoursCatholique_14,'<img src="legend/SSVP_13.png" /> SSVP ': layer_SSVP_13,'<img src="legend/Zonesblanchesdelaidealimentaire_12.png" /> Zones blanches de l\'aide alimentaire': layer_Zonesblanchesdelaidealimentaire_12,'<img src="legend/Commmunesavecaidealimentaires_11.png" /> Commmunes avec aide alimentaires': layer_Commmunesavecaidealimentaires_11,'<img src="legend/HypermarchsetSupermarchs_10.png" /> Hypermarchés et Supermarchés': layer_HypermarchsetSupermarchs_10,'<img src="legend/SuprettesetEpiceries_9.png" /> Supérettes et Epiceries': layer_SuprettesetEpiceries_9,'<img src="legend/Zonesblanchesdeloffrealimentaireclassique_8.png" /> Zones blanches de l\'offre alimentaire classique': layer_Zonesblanchesdeloffrealimentaireclassique_8,'<img src="legend/Zonesblanchesdeloffreetdelaidealimentaires_7.png" /> Zones blanches de l\'offre et de l\'aide alimentaires': layer_Zonesblanchesdeloffreetdelaidealimentaires_7,'<img src="legend/ZRR2018_6.png" /> ZRR (2018)': layer_ZRR2018_6,'Taux de chômage (2019)<br /><table><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_16740.png" /></td><td>1,6 - 7,4</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_741011.png" /></td><td>7,4 - 10,1</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_1011292.png" /></td><td>10,1 - 12,9</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_1291713.png" /></td><td>12,9 - 17,1</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_1712644.png" /></td><td>17,1 - 26,4</td></tr></table>': layer_Tauxdechmage2019_5,'Taux de pauvreté EPCI (2020)<br /><table><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_61730.png" /></td><td>6,1 - 7,3</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_73971.png" /></td><td>7,3 - 9,7</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_971282.png" /></td><td>9,7 - 12,8</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_1281793.png" /></td><td>12,8 - 17,9</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_1792954.png" /></td><td>17,9 - 29,5</td></tr></table>': layer_TauxdepauvretEPCI2020_4,'PAT <br /><table><tr><td style="text-align: center;"><img src="legend/PAT_3_CommunutédagglomérationduBeauvaisis0.png" /></td><td>Communuté d\'agglomération du Beauvaisis</td></tr><tr><td style="text-align: center;"><img src="legend/PAT_3_Communautédecommunesdelapicardieverte1.png" /></td><td>Communauté de communes de la picardie verte</td></tr><tr><td style="text-align: center;"><img src="legend/PAT_3_PaysdeSourcesetVallées2.png" /></td><td>Pays de Sources et Vallées</td></tr><tr><td style="text-align: center;"><img src="legend/PAT_3_ASSOCIATIONDUPAYSCOMPIEGNOIS3.png" /></td><td>ASSOCIATION DU PAYS COMPIEGNOIS</td></tr></table>': layer_PAT_3,'<img src="legend/Communes_2.png" /> Communes ': layer_Communes_2,'<img src="legend/EPCIOise_1.png" /> EPCI Oise ': layer_EPCIOise_1,"Google Road": layer_GoogleRoad_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/RgionHautsdeFrance_26.png" /> Région Hauts de France': layer_RgionHautsdeFrance_26,'<img src="legend/DpartementOise_25.png" /> Département - Oise': layer_DpartementOise_25,'<img src="legend/BAdelOise_24.png" /> BA de l\'Oise': layer_BAdelOise_24,'<img src="legend/CCASpartenaires_23.png" /> CCAS partenaires': layer_CCASpartenaires_23,'<img src="legend/Epiceriessocialespartenaires_22.png" /> Epiceries sociales partenaires': layer_Epiceriessocialespartenaires_22,'<img src="legend/Associationspartenaires_21.png" /> Associations partenaires ': layer_Associationspartenaires_21,'<img src="legend/Autresassociationshabilites_20.png" /> Autres associations habilitées': layer_Autresassociationshabilites_20,'<img src="legend/Andesnonpartenaires_19.png" /> Andes (non partenaires)': layer_Andesnonpartenaires_19,'<img src="legend/CroixRouge_18.png" /> Croix Rouge': layer_CroixRouge_18,'<img src="legend/ArmeduSalut_17.png" /> Armée du Salut': layer_ArmeduSalut_17,'<img src="legend/RestoduCoeur_16.png" /> Resto du Coeur': layer_RestoduCoeur_16,'<img src="legend/SecoursPop_15.png" /> Secours Pop': layer_SecoursPop_15,'<img src="legend/SecoursCatholique_14.png" /> Secours Catholique': layer_SecoursCatholique_14,'<img src="legend/SSVP_13.png" /> SSVP ': layer_SSVP_13,'<img src="legend/HypermarchsetSupermarchs_12.png" /> Hypermarchés et Supermarchés': layer_HypermarchsetSupermarchs_12,'<img src="legend/SuprettesetEpiceries_11.png" /> Supérettes et Epiceries': layer_SuprettesetEpiceries_11,'<img src="legend/Zonesblanchesdelaidealimentaire_10.png" /> Zones blanches de l\'aide alimentaire': layer_Zonesblanchesdelaidealimentaire_10,'<img src="legend/Commmunesavecaidealimentaires_9.png" /> Commmunes avec aide alimentaires': layer_Commmunesavecaidealimentaires_9,'<img src="legend/Zonesblanchesdeloffrealimentaireclassique_8.png" /> Zones blanches de l\'offre alimentaire classique': layer_Zonesblanchesdeloffrealimentaireclassique_8,'<img src="legend/Zonesblanchesdeloffreetdelaidealimentaires_7.png" /> Zones blanches de l\'offre et de l\'aide alimentaires': layer_Zonesblanchesdeloffreetdelaidealimentaires_7,'<img src="legend/ZRR2018_6.png" /> ZRR (2018)': layer_ZRR2018_6,'Taux de chômage (2019)<br /><table><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_16740.png" /></td><td>1,6 - 7,4</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_741011.png" /></td><td>7,4 - 10,1</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_1011292.png" /></td><td>10,1 - 12,9</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_1291713.png" /></td><td>12,9 - 17,1</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage2019_5_1712644.png" /></td><td>17,1 - 26,4</td></tr></table>': layer_Tauxdechmage2019_5,'Taux de pauvreté EPCI (2020)<br /><table><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_61730.png" /></td><td>6,1 - 7,3</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_73971.png" /></td><td>7,3 - 9,7</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_971282.png" /></td><td>9,7 - 12,8</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_1281793.png" /></td><td>12,8 - 17,9</td></tr><tr><td style="text-align: center;"><img src="legend/TauxdepauvretEPCI2020_4_1792954.png" /></td><td>17,9 - 29,5</td></tr></table>': layer_TauxdepauvretEPCI2020_4,'PAT <br /><table><tr><td style="text-align: center;"><img src="legend/PAT_3_CommunutédagglomérationduBeauvaisis0.png" /></td><td>Communuté d\'agglomération du Beauvaisis</td></tr><tr><td style="text-align: center;"><img src="legend/PAT_3_Communautédecommunesdelapicardieverte1.png" /></td><td>Communauté de communes de la picardie verte</td></tr><tr><td style="text-align: center;"><img src="legend/PAT_3_PaysdeSourcesetVallées2.png" /></td><td>Pays de Sources et Vallées</td></tr><tr><td style="text-align: center;"><img src="legend/PAT_3_ASSOCIATIONDUPAYSCOMPIEGNOIS3.png" /></td><td>ASSOCIATION DU PAYS COMPIEGNOIS</td></tr></table>': layer_PAT_3,'<img src="legend/Communes_2.png" /> Communes ': layer_Communes_2,'<img src="legend/EPCIOise_1.png" /> EPCI Oise ': layer_EPCIOise_1,"Google Road": layer_GoogleRoad_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
